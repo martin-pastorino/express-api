@@ -4,8 +4,9 @@ const { registerMiddlewares } = require('./middlewares');
 
 // Make a express app.
 const app = express();
+app.use(express.json());
 // We are going to use the port 3000.
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 // first step, routes registration.
 registerRoutes(app)

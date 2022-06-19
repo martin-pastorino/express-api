@@ -22,7 +22,7 @@ class ProductService {
     const result = new Promise((resolve)=>{
       setTimeout(()=>{
         resolve(this.products)
-      },2000)
+      },0)
     })
     return result
   }
