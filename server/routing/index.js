@@ -14,7 +14,7 @@ function registerRoutes(app) {
 
   // Path root.
   routerV1.use(PathNames.HOME_PATH, homeRoute);
-  
+
 }
 
 module.exports = registerRoutes;

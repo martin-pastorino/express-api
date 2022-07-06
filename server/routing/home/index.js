@@ -1,28 +1,18 @@
 const express = require('express');
-const {PathNames} = require('../routesNames');
+const { PathNames } = require('../routesNames');
 const router = express.Router();
+const { getHomeRoot, postHomeRoot, putHomeRoot, allHomeRoot } = require('./handlers');
 
-const responseEmpty = require('../../dtos/messageResponse')
+// GET
+router.get(PathNames.HOME_PATH, getHomeRoot)
 
-router.use((req, res, next) => {
-  console.log("Home route, time response", Date.now());
-  next()
-})
+// POST
+router.post(PathNames.HOME_PATH, postHomeRoot)
 
-router.get(PathNames.HOME_PATH, (req, res) => {
-  res.status(200).json(responseEmpty("Get Method Invoked"));
-})
+// PUT
+router.put(PathNames.HOME_PATH, putHomeRoot)
 
-router.post(PathNames.HOME_PATH,(req,res)=>{
-  res.status(200).json(responseEmpty("Post method invoked"));
-})
-
-router.put(PathNames.HOME_PATH,(req,res)=>{
-  res.status(200).json(responseEmpty("Put method invoked"));
-})
-
-router.all(PathNames.ALL,(req,res)=>{
-  res.status(405).json(responseEmpty("method invoked not allowed"));
-})
+// ALL
+router.all(PathNames.ALL, allHomeRoot)
 
 module.exports = router;

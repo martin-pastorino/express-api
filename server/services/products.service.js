@@ -18,24 +18,24 @@ class ProductService {
 
   }
 
-  async find(){
-    const result = new Promise((resolve)=>{
-      setTimeout(()=>{
+  async find() {
+    const result = new Promise((resolve) => {
+      setTimeout(() => {
         resolve(this.products)
-      },0)
+      }, 0)
     })
     return result
   }
 
-  async findOne(id){
+  async findOne(id) {
     return this.products.find(product => product.id === id)
   }
 
-  async findByName(name){
+  async findByName(name) {
     return this.products.find(product => product.name === name)
   }
 
-  async  create(product){
+  async create(product) {
     product.id = faker.datatype.uuid()
     this.products.push(product)
     return product

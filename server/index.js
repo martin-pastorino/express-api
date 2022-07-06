@@ -2,6 +2,13 @@ const express = require('express');
 const registerRoutes = require('./routing');
 const { registerMiddlewares } = require('./middlewares');
 
+// Load configuration
+require('../config');
+
+// Connect to the database
+require("./db")
+
+
 // Make a express app.
 const app = express();
 app.use(express.json());
