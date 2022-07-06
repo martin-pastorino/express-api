@@ -4,7 +4,7 @@ const store = require("./store")
 const boom = require('@hapi/boom');
 
 async function getAllProducts(req,res){
-  const result =await service.find()
+  const result =await store.all()
     res.status(200).json(result);
 }
 

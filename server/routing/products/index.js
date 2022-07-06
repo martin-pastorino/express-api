@@ -20,10 +20,9 @@ router.get(PathNames.PRODUCTS_ID, getProductById);
 router.get(PathNames.PRODUCTS_DETAILS, getProductDetails);
 
 /****************** POST ************/
-// router.post(PathNames.PRODUCTS,
-//   validatorHandler(createProductSchema, 'body')
-//   , createProduct);
-router.post(PathNames.PRODUCTS, createProduct);
+router.post(PathNames.PRODUCTS,
+  validatorHandler(createProductSchema, 'body')
+  , createProduct);
 
 /****************** ALL ************/
 router.all(PathNames.ALL, allProducts);

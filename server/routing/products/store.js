@@ -1,14 +1,19 @@
 const ProductModel = require("./model")
 
 async function addProduct(product) {
-    console.log("Producto a guardar", product)
     const p = new ProductModel(product);
    await p.save()
+}
+
+async function allProducts(){
+const result = await ProductModel.find()
+return result
 }
 
 
 
 
 module.exports= {
-    add:addProduct
+    add:addProduct,
+    all: allProducts
 }

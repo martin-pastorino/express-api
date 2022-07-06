@@ -8,3 +8,6 @@ content-type: application/json
     "dateUpdated": "2022-07-06T00:33:22.226Z",
     "dateCreated": "2022-07-01T00:33:22.226Z"
 }
+
+###
+GET http://localhost:5000/api/v1/products HTTP/1.1
